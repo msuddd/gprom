@@ -1,9 +1,12 @@
 name: promote envs
 on:
-  - push
+  push:
+    branches:
+      - dev
 jobs:
   say_hello:
     runs-on: ubuntu-latest
+    environment: dev
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
