@@ -17,8 +17,8 @@ jobs:
         uses: ./.github/actions/common
         with:
           say: ${{ secrets.SAY }}
-       - name: Push changes
-         uses: ad-m/github-push-action@master
-         with:
-           github_token: ${{ github.token }}
-           branch: ${{ github.ref }} 
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ github.token }}
+          branch: ${{ github.ref }} 
