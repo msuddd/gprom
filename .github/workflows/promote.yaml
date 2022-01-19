@@ -1,13 +1,28 @@
-name: promote envs
+name: promote envs for dev
 on:
   push:
     branches:
       - dev
-      - stage
 jobs:
   say_hello:
     runs-on: ubuntu-latest
     environment: dev
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - env: 
+          SAY: ${{ secrets.SAY }}
+        run: ./hello.sh "$SAY" 
+
+name: promote envs for stage
+on:
+  push:
+    branches:
+      - stage
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    environment: stage
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
