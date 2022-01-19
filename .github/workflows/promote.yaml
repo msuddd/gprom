@@ -9,4 +9,4 @@ jobs:
         uses: actions/checkout@v2
       - env: 
           SAY: ${{ secrets.SAY }}
-        run: hello.sh $SAY 
+        run: ./hello.sh $SAY 
