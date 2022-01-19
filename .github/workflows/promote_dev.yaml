@@ -17,10 +17,8 @@ jobs:
         uses: ./.github/actions/common
         with:
           say: ${{ secrets.SAY }}
-      - uses: actions/checkout@master
-      - name: Merge to stage
-        uses: devmasx/merge-branch@master
-        with:
-          type: now
-          target_branch: stage
-          github_token: ${{ github.token }}
+       - name: Push changes
+         uses: ad-m/github-push-action@master
+         with:
+           github_token: ${{ github.token }}
+           branch: ${{ github.ref }} 
