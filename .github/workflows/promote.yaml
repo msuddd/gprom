@@ -5,6 +5,8 @@ jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
       - env: 
           SAY: ${{ secrets.SAY }}
         run: hello.sh $SAY 
