@@ -1,2 +1,2 @@
 #!/bin/bash
-echo stage4: hello $1 | sed 's/./& /g'
+echo stage5: hello $1 | sed 's/./& /g'
