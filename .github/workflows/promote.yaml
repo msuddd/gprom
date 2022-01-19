@@ -13,7 +13,7 @@ jobs:
       - env: 
           SAY: ${{ secrets.SAY }}
         run: ./hello.sh "$SAY" 
-
+---
 name: promote envs for stage
 on:
   push:
