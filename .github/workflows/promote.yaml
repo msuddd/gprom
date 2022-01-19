@@ -4,9 +4,18 @@ on:
     branches:
       - dev
 jobs:
-  say_hello:
+  say_hello_dev:
     runs-on: ubuntu-latest
     environment: dev
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - env: 
+          SAY: ${{ secrets.SAY }}
+        run: ./hello.sh "$SAY" 
+  say_hello_stage:
+    runs-on: ubuntu-latest
+    environment: stage
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
