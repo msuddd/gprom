@@ -4,7 +4,7 @@ on:
 jobs:
   say_hello:
     runs-on: ubuntu-latest
-  steps:
-    - env: 
-        SAY: ${{ secrets.SAY }}
-      run: hello.sh $SAY 
+    steps:
+      - env: 
+          SAY: ${{ secrets.SAY }}
+        run: hello.sh $SAY 
