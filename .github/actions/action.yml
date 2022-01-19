@@ -1,0 +1,10 @@
+name: 'common'
+description: 'A common action'
+inputs:
+  say:
+    description: "what to say"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - run: ./common.sh ${{ inputs.say }}

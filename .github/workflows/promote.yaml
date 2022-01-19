@@ -14,12 +14,16 @@ jobs:
       - env: 
           SAY: ${{ secrets.SAY }}
         run: ./hello.sh "$SAY" 
-  say_hello_stage:
-    runs-on: ubuntu-latest
-    environment: stage
-    steps:
-      - name: Check out repository code
-        uses: actions/checkout@v2
-      - env: 
-          SAY: ${{ secrets.SAY }}
-        run: ./hello.sh "$SAY" 
+      - id: common_hello
+        uses: ./.github/actions/common
+        with:
+          say: ${{ secrets.SAY }}
+        #  say_hello_stage:
+        #    runs-on: ubuntu-latest
+        #    environment: stage
+        #    steps:
+        #      - name: Check out repository code
+        #        uses: actions/checkout@v2
+        #      - env: 
+        #          SAY: ${{ secrets.SAY }}
+        #        run: ./hello.sh "$SAY" 
