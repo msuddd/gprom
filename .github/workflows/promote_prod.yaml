@@ -1,12 +1,12 @@
-name: promote envs for dev
+name: promote envs for prd
 on:
   push:
     branches:
-      - dev
+      - prod
 jobs:
   say_hello:
     runs-on: ubuntu-latest
-    environment: dev
+    environment: prod
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
@@ -19,9 +19,4 @@ jobs:
         uses: ./.github/actions/common
         with:
           say: ${{ secrets.SAY }}
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ github.token }}
-          branch: stage 
-          force: true
+

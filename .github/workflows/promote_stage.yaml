@@ -1,8 +1,5 @@
 name: promote envs for stage
 on:
-  pull_request:
-    branches:
-      - stage
   push:
     branches:
       - stage
@@ -13,6 +10,8 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PAT }}
       - env: 
           SAY: ${{ secrets.SAY }}
         run: ./hello.sh "$SAY" 
@@ -20,3 +19,9 @@ jobs:
         uses: ./.github/actions/common
         with:
           say: ${{ secrets.SAY }}
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ github.token }}
+          branch: prod 
+          force: true
