@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - dev
+      - stage
 jobs:
   say_hello_dev:
     runs-on: ubuntu-latest
