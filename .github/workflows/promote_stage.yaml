@@ -1,6 +1,6 @@
 name: promote envs for stage
 on:
-  pull_request:
+  push:
     branches:
       - stage
 jobs:
