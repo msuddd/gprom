@@ -3,9 +3,8 @@ on:
   push:
     branches:
       - dev
-      - stage
 jobs:
-  say_hello_dev:
+  say_hello:
     runs-on: ubuntu-latest
     environment: dev
     steps:
@@ -18,12 +17,3 @@ jobs:
         uses: ./.github/actions/common
         with:
           say: ${{ secrets.SAY }}
-        #  say_hello_stage:
-        #    runs-on: ubuntu-latest
-        #    environment: stage
-        #    steps:
-        #      - name: Check out repository code
-        #        uses: actions/checkout@v2
-        #      - env: 
-        #          SAY: ${{ secrets.SAY }}
-        #        run: ./hello.sh "$SAY" 
