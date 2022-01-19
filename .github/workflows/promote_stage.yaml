@@ -3,9 +3,6 @@ on:
   push:
     branches:
       - stage
-  pull_request:
-    branches: [ stage ]
-    types: [opened, closed]
 jobs:
   say_hello:
     runs-on: ubuntu-latest
