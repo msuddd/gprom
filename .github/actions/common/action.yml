@@ -7,5 +7,5 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: ./common.sh ${{ inputs.say }}
+    - run: ./.github/actions/common/common.sh ${{ inputs.say }}
       shell: bash
