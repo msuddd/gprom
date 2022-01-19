@@ -8,3 +8,4 @@ runs:
   using: "composite"
   steps:
     - run: ./common.sh ${{ inputs.say }}
+      shell: bash
